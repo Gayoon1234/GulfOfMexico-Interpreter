@@ -1,0 +1,5 @@
+functio sayHello() {
+    if !False {
+        print Hello World !!!
+    }
+}

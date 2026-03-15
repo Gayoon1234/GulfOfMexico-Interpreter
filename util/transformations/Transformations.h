@@ -12,3 +12,5 @@ std::string removeBrackets(const std::string& input);
 // ; -> ! and ! -> ;
 std::string swapSemiColonsAndExclamationMarks(const std::string& input);
 
+// function -> fn
+std::string functionKeyword(const std::string& input);

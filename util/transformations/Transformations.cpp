@@ -5,7 +5,9 @@ std::string applyTransformations(const std::string& input) {
     return 
         removeBrackets(
         swapSemiColonsAndExclamationMarks(
-            input
+        functionKeyword(
+                input
+            )
         )
     );
 }
@@ -70,3 +72,35 @@ std::string swapSemiColonsAndExclamationMarks(const std::string& input) {
     return result;
 }
 
+
+
+bool isFunctionLike(const std::string& input) {
+    std::string target = "function";
+    size_t j = 0;
+    for (char c : input) {
+        while (j < target.size() && target[j] != c) j++;
+        if (j == target.size()) return false;
+        j++;
+    }
+    return true;
+}
+
+
+std::string functionKeyword(const std::string& input) {
+    // Find first word: letters only
+    size_t start = 0;
+    while (start < input.size() && std::isspace(input[start])) start++;
+
+    size_t end = start;
+    while (end < input.size() && std::isalpha(input[end])) end++;
+
+    std::string firstWord = input.substr(start, end - start);
+
+    // Transform if function-like
+    if (!firstWord.empty() && isFunctionLike(firstWord)) {
+        firstWord = "function";
+    }
+
+    // Rebuild the line: keep everything after the letters as-is
+    return input.substr(0, start) + firstWord + input.substr(end);
+}
