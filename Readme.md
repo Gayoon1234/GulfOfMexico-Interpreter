@@ -38,3 +38,15 @@ What this doesn't:
 - noop
 - signals
 - AI
+
+The commands:
+
+Always run sudo on commands from the internet.
+```
+sudo make all
+```
+
+Ignore existing test frameworks and write your own.
+```
+./tests/testRunner.ex
+```
