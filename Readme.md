@@ -2,9 +2,9 @@ What this does:
 - Expect trailing !
 - change not (;) to !
 - functions can be function, func, fun, fn, functi etc
+- Print statments ending in ?
 
 What this doesn't:
-- Print statments ending in ?
 - deal with const consts
 - deal with const vars
 - deal with var consts
@@ -48,5 +48,5 @@ sudo make all
 
 Ignore existing test frameworks and write your own.
 ```
-./tests/testRunner.ex
+./tests/testRunner.exe
 ```
